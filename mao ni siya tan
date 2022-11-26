@@ -34,17 +34,17 @@ int main()
 {
 
     int number;
-    char op;
+    char ns;
 
     printf("Enter the number you want to convert and the number system (d for decimal, o for octal): ");
     scanf("%d", &number);
-    scanf("%c", &op);
+    scanf("%c", &ns);
 
-    if (op == 'd')
+    if (ns == 'd')
     {
         printf("%d in decimal = %d in octal", number, convertDecimalToOctal(number));
     }
-    else if (op == 'o')
+    else if (ns == 'o')
     {
         printf("%d in octal = %lld in decimal", number, convertOctalToDecimal(number));
     }
