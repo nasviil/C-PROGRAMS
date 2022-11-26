@@ -1,22 +1,26 @@
 #include <stdio.h>
 #include <math.h>
 
-long long convertOctalToDecimal(int number)
+int octalToDecimal(int n)
 {
-    int decimalNumber = 0, i = 0;
+    int decimalvalue = 0, i = 1;
 
-    while (number != 0)
+    int temp = n;
+    while (temp)
     {
-        decimalNumber += (number % 10) * pow(8, i);
-        ++i;
-        number /= 10;
+
+        int lastdigit = temp % 10;
+        temp = temp / 10;
+
+        decimalvalue += lastdigit * i;
+
+        i = i * 8;
     }
 
-    i = 1;
-
-    return decimalNumber;
+    return decimalvalue;
 }
-int convertDecimalToOctal(int number)
+
+int decimalToOctal(int number)
 {
     int octalNumber = 0, i = 1;
 
@@ -42,11 +46,11 @@ int main()
 
     if (ns == 'd')
     {
-        printf("%d in decimal = %d in octal", number, convertDecimalToOctal(number));
+        printf("%d in decimal = %d in octal", number, decimalToOctal(number));
     }
     else if (ns == 'o')
     {
-        printf("%d in octal = %lld in decimal", number, convertOctalToDecimal(number));
+        printf("%d in octal = %lld in decimal", number, octalToDecimal(number));
     }
     else
     {
