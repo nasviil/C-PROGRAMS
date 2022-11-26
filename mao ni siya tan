@@ -1,20 +1,16 @@
 #include <stdio.h>
-
+#include <math.h>
 
 int octalToDecimal(int number)
 {
-    int decimalNumber = 0, i = 1;
+    int decimalNumber = 0, i = 1, temp;
 
-    int temp = number;
-    while (temp)
+    while (number != 0)
     {
-
-        int lastdigit = temp % 10;
-        temp = temp / 10;
-
-        decimalNumber += lastdigit * i;
-
+        temp = number % 10;
+        decimalNumber = decimalNumber + (temp * i);
         i = i * 8;
+        number = number / 10;
     }
 
     return decimalNumber;
@@ -54,7 +50,7 @@ int main()
     }
     else
     {
-        printf("INVALID NUMBER. USE O OR D TO INDICATE THE NUMBER SYSTEM");
+        printf("INVALID NUMBER USE O OR D TO INDICATE THE NUMBER SYSTEM");
     }
 
     return 0;
