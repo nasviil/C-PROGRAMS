@@ -54,7 +54,7 @@ int main()
     }
     else
     {
-        printf("INVALID NUMBER USE O OR D TO INDICATE THE NUMBER SYSTEM");
+        printf("INVALID NUMBER. USE O OR D TO INDICATE THE NUMBER SYSTEM");
     }
 
     return 0;
